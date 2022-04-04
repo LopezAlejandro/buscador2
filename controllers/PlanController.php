@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use app\models\Plan;
 use app\models\PlanSearch;
 use yii\web\Controller;
@@ -23,6 +24,21 @@ class PlanController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create', 'update','delete'],
+                        'roles' => ['@'],
+                    ],
+                    
+                ],
+   				'denyCallback' => function ($rule, $action) {
+                        throw new NotFoundHttpException('The requested page does not exist.');
+    						}
+            ]
         ];
     }
 

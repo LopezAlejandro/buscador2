@@ -3,10 +3,12 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use app\models\Carrera;
 use app\models\CarreraSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\ForbiddenHttpException;
 use yii\filters\VerbFilter;
 
 /**
@@ -23,6 +25,21 @@ class CarreraController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create', 'update','delete'],
+                        'roles' => ['@'],
+                    ],
+                    
+                ],
+                'denyCallback' => function ($rule, $action) {
+                        throw new NotFoundHttpException('The requested page does not exist.');
+    						}
+            ]
         ];
     }
 

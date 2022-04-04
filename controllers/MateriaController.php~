@@ -4,16 +4,16 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use app\models\Catedra;
-use app\models\CatedraSearch;
+use app\models\Materia;
+use app\models\MateriaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CatedraController implements the CRUD actions for Catedra model.
+ * MateriaController implements the CRUD actions for Materia model.
  */
-class CatedraController extends Controller
+class MateriaController extends Controller
 {
     public function behaviors()
     {
@@ -35,20 +35,20 @@ class CatedraController extends Controller
                     ],
                     
                 ],
-    					'denyCallback' => function ($rule, $action) {
-                        throw new NotFoundHttpException('The requested page does not exist.');
-    						}
+    //            'denyCallback' => function ($rule, $action) {
+   //     					throw new \Exception('You are not allowed to access this page');
+   // 						}
             ]
         ];
     }
 
     /**
-     * Lists all Catedra models.
+     * Lists all Materia models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CatedraSearch();
+        $searchModel = new MateriaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -58,7 +58,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Displays a single Catedra model.
+     * Displays a single Materia model.
      * @param integer $id
      * @return mixed
      */
@@ -75,16 +75,16 @@ class CatedraController extends Controller
     }
 
     /**
-     * Creates a new Catedra model.
+     * Creates a new Materia model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Catedra();
+        $model = new Materia();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->catedra_id]);
+            return $this->redirect(['view', 'id' => $model->materia_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -93,7 +93,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Updates an existing Catedra model.
+     * Updates an existing Materia model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,7 +103,7 @@ class CatedraController extends Controller
         $model = $this->findModel($id);
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->catedra_id]);
+            return $this->redirect(['view', 'id' => $model->materia_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -112,7 +112,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Deletes an existing Catedra model.
+     * Deletes an existing Materia model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -126,15 +126,15 @@ class CatedraController extends Controller
 
     
     /**
-     * Finds the Catedra model based on its primary key value.
+     * Finds the Materia model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Catedra the loaded model
+     * @return Materia the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Catedra::findOne($id)) !== null) {
+        if (($model = Materia::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

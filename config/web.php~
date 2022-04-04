@@ -26,7 +26,7 @@ $config = [
         ],
         'security' => [
     	    'passwordHashStrategy' => 'password_hash'
-			],
+	],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

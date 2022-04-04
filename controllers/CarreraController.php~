@@ -4,16 +4,17 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use app\models\Catedra;
-use app\models\CatedraSearch;
+use app\models\Carrera;
+use app\models\CarreraSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\ForbiddenHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CatedraController implements the CRUD actions for Catedra model.
+ * CarreraController implements the CRUD actions for Carrera model.
  */
-class CatedraController extends Controller
+class CarreraController extends Controller
 {
     public function behaviors()
     {
@@ -35,20 +36,21 @@ class CatedraController extends Controller
                     ],
                     
                 ],
-    					'denyCallback' => function ($rule, $action) {
-                        throw new NotFoundHttpException('The requested page does not exist.');
+                'denyCallback' => function ($rule, $action) {
+   //     					throw new \Exception('You are not allowed to access this page');
+                        throw new ForbiddenHttpException('La pagina no esta accesible.');
     						}
             ]
         ];
     }
 
     /**
-     * Lists all Catedra models.
+     * Lists all Carrera models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CatedraSearch();
+        $searchModel = new CarreraSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -58,7 +60,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Displays a single Catedra model.
+     * Displays a single Carrera model.
      * @param integer $id
      * @return mixed
      */
@@ -75,16 +77,16 @@ class CatedraController extends Controller
     }
 
     /**
-     * Creates a new Catedra model.
+     * Creates a new Carrera model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Catedra();
+        $model = new Carrera();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->catedra_id]);
+            return $this->redirect(['view', 'id' => $model->carrera_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -93,7 +95,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Updates an existing Catedra model.
+     * Updates an existing Carrera model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,7 +105,7 @@ class CatedraController extends Controller
         $model = $this->findModel($id);
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->catedra_id]);
+            return $this->redirect(['view', 'id' => $model->carrera_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -112,7 +114,7 @@ class CatedraController extends Controller
     }
 
     /**
-     * Deletes an existing Catedra model.
+     * Deletes an existing Carrera model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -126,15 +128,15 @@ class CatedraController extends Controller
 
     
     /**
-     * Finds the Catedra model based on its primary key value.
+     * Finds the Carrera model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Catedra the loaded model
+     * @return Carrera the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Catedra::findOne($id)) !== null) {
+        if (($model = Carrera::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

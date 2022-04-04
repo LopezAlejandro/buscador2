@@ -87,7 +87,7 @@ $this->registerJs($search);
 				'attribute' => 'archivo',
 				'format' =>'raw',
 				'value' => function ($model) {
-					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,]);
+					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,],['data-pjax' => 0]);
 					}
 			],
         [

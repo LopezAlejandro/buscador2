@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use app\models\Programas;
 use app\models\ProgramasSearch;
 use yii\web\Controller;
@@ -23,6 +24,21 @@ class ProgramasController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['create', 'update', 'delete','save-as-new'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create', 'update','delete','save-as-new'],
+                        'roles' => ['@'],
+                    ],
+                    
+                ],
+    				'denyCallback' => function ($rule, $action) {
+                        throw new NotFoundHttpException('The requested page does not exist.');
+    						} 						
+            ]
         ];
     }
 
