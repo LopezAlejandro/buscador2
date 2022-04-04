@@ -50,7 +50,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'vale_desde')->label('Valido desde')->textInput(['placeholder' => 'Vale Desde']) ?>
 
     <?= $form->field($model, 'archivo')->label('Archivo')->textInput(['maxlength' => true, 'placeholder' => 'Archivo']) ?>
-
+	 <?= $form->field($model, 'activo')->hiddenInput(['value'=>'1'])->label(false) ?>
+	 
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

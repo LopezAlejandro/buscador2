@@ -19,7 +19,7 @@ use app\models\Programas;
     {
         return [
             [['prg_id', 'carre_id', 'mate_id', 'cate_id', 'pln_id', 'vale_desde', 'vale_hasta'], 'integer'],
-            [['activo'], 'safe'],
+            [['archivo', 'activo'], 'safe'],
         ];
     }
 

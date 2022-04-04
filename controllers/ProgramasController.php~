@@ -167,7 +167,7 @@ class ProgramasController extends Controller
 	{
 
 		$model = $this->findModel($prg_id);
-		$src = Yii::$app->params['origen'].$model->archivo;
+		$src = Yii::app()->params['origen'].$model->archivo;
 		if(@file_exists($src)) {
 			$path_parts = @pathinfo($src);
 			$filename = $model->carre->sigla.' - '.$model->mate->nombre_m.' - '.$model->cate->nombre_t.'.pdf';

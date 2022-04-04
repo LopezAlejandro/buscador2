@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'mate_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'mate_id')->label('Materia')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->orderBy('materia_id')->asArray()->all(), 'materia_id', 'nombre_m'),
         'options' => ['placeholder' => 'Materia'],
         'pluginOptions' => [
@@ -31,7 +31,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'cate_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'cate_id')->label('Catedra')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->orderBy('catedra_id')->asArray()->all(), 'catedra_id', 'nombre_t'),
         'options' => ['placeholder' => 'Catedra'],
         'pluginOptions' => [
@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'pln_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'pln_id')->label('Plan')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Plan::find()->orderBy('plan_id')->asArray()->all(), 'plan_id', 'nombre_p'),
         'options' => ['placeholder' => 'Plan'],
         'pluginOptions' => [
@@ -47,9 +47,9 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'vale_desde')->textInput(['placeholder' => 'Vale Desde']) ?>
+    <?= $form->field($model, 'vale_desde')->label('Valido desde')->textInput(['placeholder' => 'Vale Desde']) ?>
 
-    <?= $form->field($model, 'archivo')->textInput(['maxlength' => true, 'placeholder' => 'Archivo']) ?>
+    <?= $form->field($model, 'archivo')->label('Archivo')->textInput(['maxlength' => true, 'placeholder' => 'Archivo']) ?>
 
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

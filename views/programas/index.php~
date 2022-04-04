@@ -33,7 +33,7 @@ $this->registerJs($search);
         ['class' => 'yii\grid\SerialColumn'],
         [
                 'attribute' => 'carre_id',
-                'label' => 'Carre',
+                'label' => 'Carrera',
                 'value' => function($model){                   
                     return $model->carre->nombre_c;                   
                 },
@@ -46,7 +46,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'mate_id',
-                'label' => 'Mate',
+                'label' => 'Materia',
                 'value' => function($model){                   
                     return $model->mate->nombre_m;                   
                 },
@@ -59,7 +59,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'cate_id',
-                'label' => 'Cate',
+                'label' => 'Catedra',
                 'value' => function($model){                   
                     return $model->cate->nombre_t;                   
                 },
@@ -72,7 +72,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'pln_id',
-                'label' => 'Pln',
+                'label' => 'Plan',
                 'value' => function($model){                   
                     return $model->pln->nombre_p;                   
                 },
@@ -83,8 +83,13 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Plan', 'id' => 'grid-programas-search-pln_id']
             ],
-        'vale_desde',
-        'archivo',
+        [
+				'attribute' => 'archivo',
+				'format' =>'raw',
+				'value' => function ($model) {
+					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,]);
+					}
+			],
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

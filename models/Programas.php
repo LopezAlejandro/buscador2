@@ -20,16 +20,20 @@ class Programas extends BaseProgramas
             [['carre_id', 'mate_id', 'cate_id', 'pln_id', 'vale_desde', 'archivo'], 'required'],
             [['carre_id', 'mate_id', 'cate_id', 'pln_id', 'vale_desde', 'vale_hasta'], 'integer'],
             [['archivo'], 'string', 'max' => 50],
-            [['activo'], 'string', 'max' => 1]
+            [['activo'], 'integer', 'max' => 1]
         ]);
     }
     
 	 public function beforeSave($insert)
 	 {
-		if(!isset($this->vale_hasta)) 
+	 		if(!isset($this->vale_hasta)) 
 				{
-					$this->vale_hasta = '3000'; 		
+					$this->vale_hasta = '3000'; 	
 			   }
+			if(!isset($this->activo)) 
+				{
+					$this->activo = '1'; 	
+			   }   
 		return parent::beforeSave($insert);
 	 }
 

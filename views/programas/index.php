@@ -83,8 +83,13 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Plan', 'id' => 'grid-programas-search-pln_id']
             ],
-        'vale_desde',
-        'archivo',
+        [
+				'attribute' => 'archivo',
+				'format' =>'raw',
+				'value' => function ($model) {
+					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,],['data-pjax' => 0]);
+					}
+			],
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',
