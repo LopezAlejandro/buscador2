@@ -21,7 +21,7 @@ echo TabularForm::widget([
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        'prg_id' => ['type' => TabularForm::INPUT_HIDDEN],
+ //       'prg_id' => ['type' => TabularForm::INPUT_HIDDEN],
         'carre_id' => [
             'label' => 'Carrera',
             'type' => TabularForm::INPUT_WIDGET,
@@ -53,13 +53,13 @@ echo TabularForm::widget([
             'columnOptions' => ['width' => '200px']
         ],
         'vale_desde' => ['type' => TabularForm::INPUT_TEXT],
-        'vale_hasta' => ['type' => TabularForm::INPUT_TEXT],
+  //      'vale_hasta' => ['type' => TabularForm::INPUT_TEXT],
         'archivo' => ['type' => TabularForm::INPUT_TEXT],
-        'activo' => ['type' => TabularForm::INPUT_CHECKBOX,
-            'options' => [
-                'style' => 'position : relative; margin-top : -9px'
-            ]
-        ],
+  //      'activo' => ['type' => TabularForm::INPUT_CHECKBOX,
+  //          'options' => [
+  //              'style' => 'position : relative; margin-top : -9px'
+  //          ]
+  //      ],
         'del' => [
             'type' => 'raw',
             'label' => '',

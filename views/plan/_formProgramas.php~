@@ -21,14 +21,14 @@ echo TabularForm::widget([
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        'prg_id' => ['type' => TabularForm::INPUT_HIDDEN],
+ //       'prg_id' => ['type' => TabularForm::INPUT_HIDDEN],
         'carre_id' => [
             'label' => 'Carrera',
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\Carrera::find()->orderBy('carrera_id')->asArray()->all(), 'carrera_id', 'carrera_id'),
-                'options' => ['placeholder' => 'Choose Carrera'],
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\Carrera::find()->orderBy('carrera_id')->asArray()->all(), 'carrera_id', 'nombre_c'),
+                'options' => ['placeholder' => 'Carrera'],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -37,8 +37,8 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->orderBy('materia_id')->asArray()->all(), 'materia_id', 'materia_id'),
-                'options' => ['placeholder' => 'Choose Materia'],
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->orderBy('materia_id')->asArray()->all(), 'materia_id', 'nombre_m'),
+                'options' => ['placeholder' => 'Materia'],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -47,18 +47,18 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->orderBy('catedra_id')->asArray()->all(), 'catedra_id', 'catedra_id'),
-                'options' => ['placeholder' => 'Choose Catedra'],
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->orderBy('catedra_id')->asArray()->all(), 'catedra_id', 'nombre_t'),
+                'options' => ['placeholder' => 'Catedra'],
             ],
             'columnOptions' => ['width' => '200px']
         ],
         'vale_desde' => ['type' => TabularForm::INPUT_TEXT],
-        'vale_hasta' => ['type' => TabularForm::INPUT_TEXT],
+  //      'vale_hasta' => ['type' => TabularForm::INPUT_TEXT],
         'archivo' => ['type' => TabularForm::INPUT_TEXT],
-        'activo' => ['type' => TabularForm::INPUT_CHECKBOX,
-            'options' => [
-                'style' => 'position : relative; margin-top : -9px'
-            ]
+  //      'activo' => ['type' => TabularForm::INPUT_CHECKBOX,
+  //          'options' => [
+  //              'style' => 'position : relative; margin-top : -9px'
+  //          ]
         ],
         'del' => [
             'type' => 'raw',
@@ -76,7 +76,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . 'Add Programas', ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowProgramas()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . 'Agregar Programas', ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowProgramas()']),
         ]
     ]
 ]);

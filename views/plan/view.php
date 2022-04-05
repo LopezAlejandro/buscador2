@@ -48,23 +48,23 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerProgramas->totalCount){
     $gridColumnProgramas = [
         ['class' => 'yii\grid\SerialColumn'],
-            'prg_id',
+      //      'prg_id',
             [
                 'attribute' => 'carre.nombre_c',
                 'label' => 'Carrera'
             ],
             [
                 'attribute' => 'mate.nombre_m',
-                'label' => 'Mate'
+                'label' => 'Materia'
             ],
             [
                 'attribute' => 'cate.nombre_t',
-                'label' => 'Cate'
+                'label' => 'Catedra'
             ],
                         'vale_desde',
-            'vale_hasta',
+   //         'vale_hasta',
             'archivo',
-            'activo',
+   //         'activo',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,

@@ -50,21 +50,21 @@ if($providerProgramas->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             'prg_id',
             [
-                'attribute' => 'carre.carrera_id',
-                'label' => 'Carre'
+                'attribute' => 'carre.nombre_c',
+                'label' => 'Carrera'
             ],
             [
-                'attribute' => 'mate.materia_id',
-                'label' => 'Mate'
+                'attribute' => 'mate.nombre_m',
+                'label' => 'Materia'
             ],
             [
-                'attribute' => 'cate.catedra_id',
-                'label' => 'Cate'
+                'attribute' => 'cate.nombre_t',
+                'label' => 'Catedra'
             ],
                         'vale_desde',
-            'vale_hasta',
+   //         'vale_hasta',
             'archivo',
-            'activo',
+   //         'activo',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,
