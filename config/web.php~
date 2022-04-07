@@ -8,6 +8,7 @@ $config = [
     'name' => 'Buscador de Programas',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultController'=>'programas/index',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -26,7 +27,7 @@ $config = [
         ],
         'security' => [
     	    'passwordHashStrategy' => 'password_hash'
-	],
+			],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
