@@ -37,8 +37,7 @@ class CarreraController extends Controller
                     
                 ],
                 'denyCallback' => function ($rule, $action) {
-   //     					throw new \Exception('You are not allowed to access this page');
-                        throw new ForbiddenHttpException('La pagina no esta accesible.');
+                        throw new NotFoundHttpException('The requested page does not exist.');
     						}
             ]
         ];

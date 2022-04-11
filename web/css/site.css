@@ -5800,3 +5800,25 @@ a.desc:after {
 .select2-container--krajee-bs4 .select2-results__option--highlighted[aria-selected] {
 background-color: #2F414A;
 }
+
+
+.carrera-index > h1,
+.catedra-index > h1,
+.materia-index > h1,
+.plan-index > h1,
+.programas-index > h1,
+.site-login > h1 {
+ background-color: #7EBCFA;
+ border-radius: 10px;
+ display:inline;
+ padding-left: 10px;
+ padding-right:10px;  
+}
+
+.carrera-index > p,
+.catedra-index > p,
+.materia-index > p,
+.plan-index > p,
+.programas-index >p {
+padding-top: 1rem;
+}

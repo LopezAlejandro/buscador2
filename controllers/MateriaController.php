@@ -36,7 +36,7 @@ class MateriaController extends Controller
                     
                 ],
     				'denyCallback' => function ($rule, $action) {
-                        throw new NotFoundHttpException('The requested page does not exist.');
+                        throw new NotFoundHttpException(Yii::t('app','The requested page does not exist.'));
     						}
             ]
         ];

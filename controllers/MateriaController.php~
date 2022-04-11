@@ -35,9 +35,9 @@ class MateriaController extends Controller
                     ],
                     
                 ],
-    //            'denyCallback' => function ($rule, $action) {
-   //     					throw new \Exception('You are not allowed to access this page');
-   // 						}
+    				'denyCallback' => function ($rule, $action) {
+                        throw new NotFoundHttpException('The requested page does not exist.');
+    						}
             ]
         ];
     }
