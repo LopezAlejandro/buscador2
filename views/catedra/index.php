@@ -39,6 +39,7 @@ $this->registerJs($search);
         'nombre_t',
         [
             'class' => 'yii\grid\ActionColumn',
+            'visible' => !Yii::$app->user->isGuest,
         ],
     ]; 
     ?>

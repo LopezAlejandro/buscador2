@@ -186,7 +186,7 @@ class ProgramasController extends Controller
 		$src = Yii::$app->params['origen'].$model->archivo;
 		if(@file_exists($src)) {
 			$path_parts = @pathinfo($src);
-			$filename = $model->carre->sigla.' - '.$model->mate->nombre_m.' - '.$model->cate->nombre_t.'.pdf';
+			$filename = $model->carre->sigla.' - '.$model->mate->nombre_m.' - '.$model->cate->nombre_t.' - '.$model->pln->nombre_p.'.pdf';
 			//$mime = $this->__get_mime($path_parts['extension']);
 			header('Content-Description: File Transfer');
 			header('Content-Type: application/octet-stream');

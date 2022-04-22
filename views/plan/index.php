@@ -34,11 +34,19 @@ $this->registerJs($search);
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
     </div>
     <?php 
+    if (!(Yii::$app->user->isGuest)) {
+    	$template = '{view} {update} {delete}';
+    	} else {
+    		$template ='{view}';
+    	};
+    	
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         'nombre_p',
         [
+            'header' => 'Ver',
             'class' => 'yii\grid\ActionColumn',
+            'template' => $template
         ],
     ]; 
     ?>

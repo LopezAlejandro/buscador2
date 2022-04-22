@@ -46,6 +46,7 @@ $this->registerJs($search);
         'sigla',
         [
             'class' => 'yii\grid\ActionColumn',
+            'visible' => !Yii::$app->user->isGuest,
         ],
     ]; 
     ?>

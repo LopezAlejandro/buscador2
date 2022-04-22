@@ -5,5 +5,5 @@ return [
     'senderEmail' => 'noreply@example.com',
     'senderName' => 'Example.com mailer',
     'bsVersion' => '4.x',
-    'origen' => '/srv/http/buscar/files/',
+    'origen' => '/srv/http/busqueda2/files/',
 ];

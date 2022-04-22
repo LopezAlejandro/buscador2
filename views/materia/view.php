@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerProgramas->totalCount){
     $gridColumnProgramas = [
         ['class' => 'yii\grid\SerialColumn'],
-            'prg_id',
+   //         'prg_id',
             [
                 'attribute' => 'carre.nombre_c',
                 'label' => 'Carrera'
@@ -64,7 +64,15 @@ if($providerProgramas->totalCount){
             'vale_desde',
             'vale_hasta',
             'archivo',
-            'activo',
+            
+            [
+	        		'class' => '\kartik\grid\BooleanColumn',
+					'attribute' => 'activo',
+					'format' => 'boolean',
+					'label' => 'Activo',        		
+	        		'trueLabel' => 'Yes', 
+        			'falseLabel' => 'No'
+            ]
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,

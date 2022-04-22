@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Materia'.' '. Html::encode($this->title) ?></h2>
+            <h2><?= 'Materia : '.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerProgramas->totalCount){
     $gridColumnProgramas = [
         ['class' => 'yii\grid\SerialColumn'],
-            'prg_id',
+   //         'prg_id',
             [
                 'attribute' => 'carre.nombre_c',
                 'label' => 'Carrera'
@@ -64,7 +64,14 @@ if($providerProgramas->totalCount){
             'vale_desde',
             'vale_hasta',
             'archivo',
-            'activo',
+            
+            [
+	        		'class' => '\kartik\grid\BooleanColumn',
+					'attribute' => 'activo',
+					'label' => 'Activo',        		
+	        		'trueLabel' => 'Yes', 
+        			'falseLabel' => 'No'
+            ]
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,

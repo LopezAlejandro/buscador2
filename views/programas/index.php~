@@ -22,8 +22,13 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Programas', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>
+        <?php
+		if (!(Yii::$app->user->isGuest)) {
+			echo Html::a('Create Programas', ['create'], ['class' => 'btn btn-success']).' ';		
+		} 
+		echo Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']);
+			
+     ?>
     </p>
     <div class="search-form" style="display:none">
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
@@ -83,12 +88,19 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Plan', 'id' => 'grid-programas-search-pln_id']
             ],
+            [
+            	'attribute' => 'vale_desde',
+            	'label' => 'Año',
+            	
+            ],
         [
 				'attribute' => 'archivo',
 				'format' =>'raw',
+				'hiddenFromExport' => true,
 				'value' => function ($model) {
 					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,],['data-pjax' => 0]);
-					}
+					},
+			
 			],
         [
             'class' => 'yii\grid\ActionColumn',
@@ -98,6 +110,7 @@ $this->registerJs($search);
                     return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
                 },
             ],
+             'visible' => !Yii::$app->user->isGuest,
         ],
     ]; 
     ?>

@@ -88,12 +88,18 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Plan', 'id' => 'grid-programas-search-pln_id']
             ],
+            [
+            	'attribute' => 'vale_desde',
+            	'label' => 'Año',
+            ],
         [
 				'attribute' => 'archivo',
 				'format' =>'raw',
+				'hiddenFromExport' => true,
 				'value' => function ($model) {
 					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,],['data-pjax' => 0]);
-					}
+					},
+			
 			],
         [
             'class' => 'yii\grid\ActionColumn',
@@ -103,6 +109,7 @@ $this->registerJs($search);
                     return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
                 },
             ],
+             'visible' => !Yii::$app->user->isGuest,
         ],
     ]; 
     ?>

@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     
-    <div class="row">
+    <div class="row table-responsive">
 <?php
 if($providerProgramas->totalCount){
     $gridColumnProgramas = [
@@ -61,9 +61,16 @@ if($providerProgramas->totalCount){
                 'attribute' => 'cate.nombre_t',
                 'label' => 'Catedra'
             ],
-                        'vale_desde',
+         //               'vale_desde',
    //         'vale_hasta',
-            'archivo',
+      //      'archivo',
+            [
+				'attribute' => 'archivo',
+				'format' =>'raw',
+				'value' => function ($model) {
+					return Html::a('Descargar',['programas/download','prg_id' => $model->prg_id,],['data-pjax' => 0]);
+					}
+			],
    //         'activo',
     ];
     echo Gridview::widget([
@@ -75,6 +82,8 @@ if($providerProgramas->totalCount){
             'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Programas'),
         ],
         'export' => false,
+        'responsive'=>true,
+    	  'hover'=>true,
         'columns' => $gridColumnProgramas
     ]);
 }

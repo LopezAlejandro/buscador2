@@ -18,11 +18,7 @@ $this->registerJs($search);
 ?>
 <div class="carrera-index">
 
-	<section class="banner">
-
     <h1><?= Html::encode($this->title) ?></h1>
-    
-    </section>
     
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
