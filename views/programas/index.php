@@ -43,7 +43,7 @@ $this->registerJs($search);
                     return $model->carre->nombre_c;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Carrera::find()->asArray()->all(), 'carrera_id', 'nombre_c'),
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Carrera::find()->orderBy('nombre_c')->asArray()->all(), 'carrera_id', 'nombre_c'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
@@ -56,7 +56,7 @@ $this->registerJs($search);
                     return $model->mate->nombre_m;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->asArray()->all(), 'materia_id', 'nombre_m'),
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->orderBy('nombre_m')->asArray()->all(), 'materia_id', 'nombre_m'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
@@ -69,7 +69,7 @@ $this->registerJs($search);
                     return $model->cate->nombre_t;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->asArray()->all(), 'catedra_id', 'nombre_t'),
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->orderBy('nombre_t')->asArray()->all(), 'catedra_id', 'nombre_t'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],

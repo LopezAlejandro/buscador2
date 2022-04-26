@@ -65,7 +65,7 @@ if($providerProgramas->totalCount){
             'vale_desde',
             'vale_hasta',
             'archivo',
-            'activo',
+    //        'activo',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,

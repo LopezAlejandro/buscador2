@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Catedra'.' '. Html::encode($this->title) ?></h2>
+            <h2><?= 'Catedra :'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
@@ -50,16 +50,16 @@ if($providerProgramas->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             'prg_id',
             [
-                'attribute' => 'carre.carrera_id',
-                'label' => 'Carre'
+                'attribute' => 'carre.nombre_c',
+                'label' => 'Carrera'
             ],
             [
-                'attribute' => 'mate.materia_id',
-                'label' => 'Mate'
+                'attribute' => 'mate.nombre_m',
+                'label' => 'Materia'
             ],
                         [
-                'attribute' => 'pln.plan_id',
-                'label' => 'Pln'
+                'attribute' => 'pln.nombre_p',
+                'label' => 'Plan'
             ],
             'vale_desde',
             'vale_hasta',

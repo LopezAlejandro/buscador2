@@ -19,14 +19,17 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
-            <?= Html::a('Update', ['update', 'id' => $model->plan_id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->plan_id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
-                    'method' => 'post',
-                ],
-            ])
+            <?php
+            if (!(Yii::$app->user->isGuest)) {
+            		echo Html::a('Update', ['update', 'id' => $model->plan_id], ['class' => 'btn btn-primary']); 
+            		echo Html::a('Delete', ['delete', 'id' => $model->plan_id], [
+                		'class' => 'btn btn-danger',
+                		'data' => [
+                    		'confirm' => 'Are you sure you want to delete this item?',
+                    		'method' => 'post',
+                		],
+            		]);
+            }		
             ?>
         </div>
     </div>

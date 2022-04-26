@@ -15,45 +15,45 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'carre_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'carre_id')->label('Carrera')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Carrera::find()->orderBy('carrera_id')->asArray()->all(), 'carrera_id', 'nombre_c'),
-        'options' => ['placeholder' => 'Choose Carrera'],
+        'options' => ['placeholder' => 'Carrera'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
-    <?= $form->field($model, 'mate_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'mate_id')->label('Materia')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Materia::find()->orderBy('materia_id')->asArray()->all(), 'materia_id', 'nombre_m'),
-        'options' => ['placeholder' => 'Choose Materia'],
+        'options' => ['placeholder' => 'Materia'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
-    <?= $form->field($model, 'cate_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'cate_id')->label('Catedra')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Catedra::find()->orderBy('catedra_id')->asArray()->all(), 'catedra_id', 'nombre_t'),
-        'options' => ['placeholder' => 'Choose Catedra'],
+        'options' => ['placeholder' => 'Catedra'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
-    <?= $form->field($model, 'pln_id')->widget(\kartik\widgets\Select2::classname(), [
+    <?= $form->field($model, 'pln_id')->label('Plan')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Plan::find()->orderBy('plan_id')->asArray()->all(), 'plan_id', 'nombre_p'),
-        'options' => ['placeholder' => 'Choose Plan'],
+        'options' => ['placeholder' => 'Plan'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
-    <?= $form->field($model, 'vale_desde')->label('Valido desde')->textInput(['placeholder' => 'Vale Desde']) ?>
+    <?= $form->field($model, 'vale_desde')->label('Valido desde')->textInput(['placeholder' => 'Valido desde']) ?>
 
     <?php /* echo $form->field($model, 'archivo')->textInput(['maxlength' => true, 'placeholder' => 'Archivo']) */ ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <?= Html::resetButton('Borrar', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
