@@ -36,16 +36,16 @@ use yii\widgets\ActiveForm;
             ]),
         ],
     ];
-    echo kartik\tabs\TabsX::widget([
-        'items' => $forms,
-        'position' => kartik\tabs\TabsX::POS_ABOVE,
-        'encodeLabels' => false,
-        'pluginOptions' => [
-            'bordered' => true,
-            'sideways' => true,
-            'enableCache' => false,
-        ],
-    ]);
+ //   echo kartik\tabs\TabsX::widget([
+ //       'items' => $forms,
+ //       'position' => kartik\tabs\TabsX::POS_ABOVE,
+ //       'encodeLabels' => false,
+ //       'pluginOptions' => [
+ //           'bordered' => true,
+ //           'sideways' => true,
+ //           'enableCache' => false,
+ //       ],
+ //   ]);
     ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

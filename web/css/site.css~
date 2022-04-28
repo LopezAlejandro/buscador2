@@ -48,7 +48,7 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
-  background: url(/buscador/img/fondo.png) no-repeat center center fixed; 
+  background: url(/img/fondo.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5807,7 +5807,8 @@ background-color: #2F414A;
 .materia-index > h1,
 .plan-index > h1,
 .programas-index > h1,
-.site-login > h1 {
+.site-login > h1,
+.plan-view > h2 {
  background-color: #7EBCFA;
  border-radius: 10px;
  display:inline;

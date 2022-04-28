@@ -34,6 +34,9 @@ use yii\widgets\ActiveForm;
             ]),
         ],
     ];
+    ?>
+    <div class="table-responsive">
+    <?php
     echo kartik\tabs\TabsX::widget([
         'items' => $forms,
         'position' => kartik\tabs\TabsX::POS_ABOVE,
@@ -45,6 +48,7 @@ use yii\widgets\ActiveForm;
         ],
     ]);
     ?>
+    </div>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Cancel'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>

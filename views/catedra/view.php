@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     
-    <div class="row">
+    <div class="row table-responsive">
 <?php
 if($providerProgramas->totalCount){
     $gridColumnProgramas = [
@@ -64,7 +64,15 @@ if($providerProgramas->totalCount){
             'vale_desde',
             'vale_hasta',
             'archivo',
-            'activo',
+ //           'activo',
+            [
+            'class' => 'yii\grid\CheckboxColumn',
+            'header' => 'Activo',
+            'checkboxOptions' => function($model) {
+                return ['checked' => $model->activo == 1 ? true : false];
+            }
+        ],
+            
     ];
     echo Gridview::widget([
         'dataProvider' => $providerProgramas,

@@ -14,8 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="plan-view">
 
     <div class="row">
-        <div class="col-sm-9">
-            <h2><?= 'Plan'.' '. Html::encode($this->title) ?></h2>
+        <div class="col-sm-9" style="padding-bottom: 10px;">
+            <h2><?= 'Plan - '.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             

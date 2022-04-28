@@ -5807,7 +5807,8 @@ background-color: #2F414A;
 .materia-index > h1,
 .plan-index > h1,
 .programas-index > h1,
-.site-login > h1 {
+.site-login > h1,
+.plan-view > .row > .col-sm-9 > h2 {
  background-color: #7EBCFA;
  border-radius: 10px;
  display:inline;

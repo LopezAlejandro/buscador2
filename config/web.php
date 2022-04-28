@@ -18,12 +18,19 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'qv2bPKnzfVQ6XExMzSY1hXVhJM11Cb2g',
         ],
+        'session' => [
+            'class' => 'yii\web\Session',
+            'cookieParams' => ['lifetime' => 2*60*60]
+       ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+//            'enableAutoLogin' => true,
+            'enableSession' => true,
+            'enableAutoLogin' => false,
+       		 'authTimeout' => 2*60*60, // auth expire 
         ],
         'security' => [
     	    'passwordHashStrategy' => 'password_hash'
